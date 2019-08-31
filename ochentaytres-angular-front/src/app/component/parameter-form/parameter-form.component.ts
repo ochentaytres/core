@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Parameter } from '../../model/parameter';
 import { ParameterService } from '../../service/parameter.service';
+import { ParameterListComponent } from '../parameter-list/parameter-list.component';
 
 @Component({
   selector: 'app-parameter-form',
@@ -10,6 +11,8 @@ import { ParameterService } from '../../service/parameter.service';
 })
 export class ParameterFormComponent {
 
+  static path: string = 'rest/parameter/add';
+  
   parameter: Parameter;
 
   constructor(private route: ActivatedRoute, private router: Router, private parameterService: ParameterService) {
@@ -20,6 +23,6 @@ export class ParameterFormComponent {
     this.parameterService.save(this.parameter).subscribe(result => this.gotoParameterList());
   }
   gotoParameterList() {
-    this.router.navigate(['/parameters']);
+    this.router.navigate([ParameterListComponent.path]);
   }
 }

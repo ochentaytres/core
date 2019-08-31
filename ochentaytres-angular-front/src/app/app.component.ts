@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string;
   constructor() {
-    this.title = 'Ocentra y tres angular front';
+    this.title = 'Ochenta y tres angular front';
   }
 }

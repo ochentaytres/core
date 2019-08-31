@@ -3,7 +3,7 @@
     <form (ngSubmit)="onSubmit()" #parameterForm="ngForm">
       <div class="form-group">
         <label for="key">Key</label>
-        <input type="text" [(ngModel)]="parameter.name" class="form-control" id="key" name="key"
+        <input type="text" [(ngModel)]="parameter.key" class="form-control" id="key" name="key"
           placeholder="Enter pararmeter key" required #key="ngModel">
       </div>
       <div [hidden]="!key.pristine" class="alert alert-danger">Key is required</div>

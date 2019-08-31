@@ -9,6 +9,7 @@ import { ParameterService } from '../../service/parameter.service';
   styleUrls: ['./parameter-list.component.css']
 })
 export class ParameterListComponent implements OnInit {
+  static path: string = 'rest/parameter/list';
   parameters: Parameter[];
 
   constructor(private parameterService: ParameterService) { }
