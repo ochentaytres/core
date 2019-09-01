@@ -28,7 +28,7 @@ public class ParameterService {
 
     @GetMapping(value = RestMappings.CORE_PARAMETER_LIST)
     public List<Parameter> listParameters(){
-        List pList = new ArrayList();
+        List<Parameter> pList = new ArrayList<Parameter>();
 
         pList.addAll(parameterDao.getPrameters());
 

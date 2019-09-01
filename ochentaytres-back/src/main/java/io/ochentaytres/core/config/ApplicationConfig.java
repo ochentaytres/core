@@ -12,10 +12,13 @@ import org.springframework.context.annotation.DependsOn;
  * @author agonriv
  */
 public class ApplicationConfig extends Properties{
-    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+    
+	private static final long serialVersionUID = 1L;
+	private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
     
     public ApplicationConfig() {
         super();
+        LOGGER.trace("ApplicationConfig created");
     }
 
     /*

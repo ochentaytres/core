@@ -1,0 +1,19 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #parameterForm="ngForm">
+      <div class="form-group">
+        <label for="key">Key</label>
+        <input type="text" [(ngModel)]="parameter.key" class="form-control" id="key" name="key"
+          placeholder="Enter pararmeter key" required #key="ngModel">
+      </div>
+      <div [hidden]="!key.pristine" class="alert alert-danger">Key is required</div>
+      <div class="form-group">
+        <label for="value">Value</label>
+        <input type="text" [(ngModel)]="parameter.value" class="form-control" id="value" name="value"
+          placeholder="Enter parameter value" required #value="ngModel">
+        <div [hidden]="!value.pristine" class="alert alert-danger">Value is required</div>
+      </div>
+      <button type="submit" [disabled]="!parameterForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

@@ -17,9 +17,14 @@ public class CustomRepositoryImpl<T, ID extends Serializable>
 
     private final EntityManager entityManager;
 
-    public CustomRepositoryImpl(JpaEntityInformation entityInformation, EntityManager entityManager) {
-        super(entityInformation, entityManager);
+    @SuppressWarnings("unchecked")
+	public CustomRepositoryImpl(JpaEntityInformation<?, ?> entityInformation, EntityManager entityManager) {
+        super((JpaEntityInformation<T, ?>) entityInformation, entityManager);
         this.entityManager = entityManager;
     }
+
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
 
 }
